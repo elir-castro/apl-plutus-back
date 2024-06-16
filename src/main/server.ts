@@ -1,23 +1,23 @@
-import { NestFactory } from '@nestjs/core';
-import { ServerModule } from './server.module';
-import { BadRequestException, ValidationPipe } from '@nestjs/common';
+import { ValidationPipe } from "@nestjs/common";
+import { NestFactory } from "@nestjs/core";
+import { ServerModule } from "./server.module";
 
 async function bootstrap(): Promise<void> {
-  console.log('[Servidor]: Ambiente Desenvolvimento.');
+    console.log("[Servidor]: Ambiente Desenvolvimento.");
 
-  const app = await NestFactory.create(ServerModule);
+    const app = await NestFactory.create(ServerModule);
 
-  app.useGlobalPipes(
-    new ValidationPipe({
-      transform: true,
-      forbidNonWhitelisted: true,
-    }),
-  );
+    app.useGlobalPipes(
+        new ValidationPipe({
+            transform: true,
+            forbidNonWhitelisted: true,
+        }),
+    );
 
-  const port = 3000;
-  const host = '127.0.0.1';
+    const port = 3000;
+    const host = "127.0.0.1";
 
-  await app.listen(port, host);
-  console.log(`Application is running on: ${await app.getUrl()}`);
+    await app.listen(port, host);
+    console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();

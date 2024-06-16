@@ -1,16 +1,12 @@
-import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsNotEmpty, IsString } from "class-validator";
 
 export class AdicionarPessoaRequest {
-  @IsNotEmpty()
-  @IsString()
-  nome: string;
-
-  @IsNotEmpty()
-  @IsNumber()
-  idade: number;
+    @IsNotEmpty()
+    @IsString()
+    nome: string;
 }
 
 export class AdicionarPessoaResponse {
-  nome: string;
-  idade: string;
+    id: string;
+    nome: string;
 }

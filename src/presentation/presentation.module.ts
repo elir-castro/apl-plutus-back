@@ -1,8 +1,9 @@
-import { Module } from '@nestjs/common';
-import { PessoaController } from './controller/pessoa.controller';
+import { Module } from "@nestjs/common";
+import { PessoaController } from "./controller/pessoa.controller";
+import UseCaseModule from "@/usecase/usecase.module";
 
 @Module({
-  imports: [],
-  controllers: [PessoaController],
+    imports: [UseCaseModule],
+    controllers: [PessoaController],
 })
 export default class PresentationModule {}

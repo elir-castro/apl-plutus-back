@@ -1,7 +1,7 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
 @Module({
-  imports: [],
-  providers: [],
-  exports: [],
+    imports: [],
+    providers: [],
+    exports: [],
 })
 export default class InfrastructureModule {}
