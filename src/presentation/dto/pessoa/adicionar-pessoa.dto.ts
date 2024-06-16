@@ -8,5 +8,4 @@ export class AdicionarPessoaRequest {
 
 export class AdicionarPessoaResponse {
     id: string;
-    nome: string;
 }
